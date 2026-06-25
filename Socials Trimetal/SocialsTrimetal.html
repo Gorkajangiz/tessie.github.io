@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trimetal Social Media Content | Tess Jansen</title>
+    <meta name="description"
+        content="Social media assets and UGC produced for Trimetal using DaVinci Resolve by Tess Jansen during her internship.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Custom styles for vertical phone videos */
+        .phone-video-container {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 24px;
+            border: 8px solid var(--text-primary);
+            box-shadow: 0 20px 50px rgba(30, 51, 45, 0.22);
+            background-color: #000;
+            overflow: hidden;
+            aspect-ratio: 576/1024;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .phone-video-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 60px rgba(30, 51, 45, 0.3);
+        }
+
+        .phone-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .phone-grid-section {
+            padding: 40px 0 100px;
+            background-color: var(--bg-color);
+        }
+
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .phone-grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .phone-grid-caption {
+            margin-top: 14px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Adjust stickiness and grid sizing for detail page */
+        .detail-about-photo-col.phone-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 100px;
+        }
+
+        @media (max-width: 1300px) {
+            .phone-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .phone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .detail-about-photo-col.phone-col {
+                position: static;
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .phone-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-experience">
+
+    <!-- Header -->
+    <header class="header page-header">
+        <div class="container-wide"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="../index.html" class="logo" id="logoText">Tess Jansen</a>
+            <a href="../contact.html" class="btn-connect" id="headerCta">
+                <span class="btn-connect-text">CONNECT</span>
+                <span class="btn-connect-icon">&#8594;</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../projects.html">Highlighted Work</a></li>
+            <li><a href="../experience.html">Experience and <br>Education</a></li>
+            <li><a href="../meetme.html">Meet me</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-nav-overlay" id="sideNavOverlay"></div>
+
+    <!-- === PAGE HERO === -->
+    <section class="exp-page-hero" style="margin-top: -30px;">
+        <div class="container-wide">
+            <div class="detail-hero-breadcrumb" style="margin-bottom: 14px;">
+                <a href="../experience.html">Experience</a>
+                <span style="margin: 0 8px; opacity: 0.6;">&#8594;</span>
+                <a href="../stage-bocavista.html">Studio Bocavista</a>
+                <span style="margin: 0 8px; opacity: 0.6;">&#8594;</span>
+                <span style="opacity: 0.6;">Trimetal Social Media</span>
+            </div>
+            <p class="meetme-label">STUDIO BOCAVISTA · INTERNSHIP</p>
+            <h1 class="exp-page-title">Trimetal <em>Social Media</em></h1>
+            <p class="exp-page-subtitle">Vertical Content assets · 2021</p>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT THIS SECTION ===== -->
+    <section class="detail-about-section">
+        <div class="container-wide">
+            <div class="detail-about-layout">
+
+                <!-- Left: Description -->
+                <div class="detail-about-text">
+                    <p class="detail-section-label">ABOUT THIS WORK</p>
+                    <h2 class="detail-about-title">Crafting social presence for <em>Trimetal</em></h2>
+                    <p class="detail-about-body">
+                        During my internship, I created various social media assets for the paint company Trimetal. 
+                        All of this content was produced using DaVinci Resolve, optimizing workflows to output high-quality, high-tempo videos tailored for mobile audiences.
+                    </p>
+                    <p class="detail-about-body">
+                        The projects ranged from motion graphics for short posts to UGC (User-Generated Content)—which involves taking footage provided by product users and turning it into something engaging, authentic, and native to platforms like Instagram, TikTok, and YouTube Shorts.
+                    </p>
+                    <p class="detail-about-body">
+                        Working on the Trimetal campaign, I learned the importance of dynamic pacing, screen framing (specifically keeping action and titles safe for 9:16 mobile viewports), and color consistency across different user-submitted formats.
+                    </p>
+                    <div class="detail-about-tags">
+                        <span>Video Editing</span>
+                        <span>Motion Graphics</span>
+                        <span>UGC (User-Generated Content)</span>
+                        <span>DaVinci Resolve</span>
+                        <span>Social Media Assets</span>
+                        <span>Mobile Optimization</span>
+                    </div>
+                </div>
+
+                <!-- Right: Video (s1.mp4) in phone format -->
+                <div class="detail-about-photo-col phone-col">
+                    <div class="phone-video-container">
+                        <video class="phone-video" autoplay loop muted playsinline controls>
+                            <source src="s1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="detail-divider"></div>
+
+    <!-- === MEDIA GALLERY SECTION === -->
+    <section class="phone-grid-section">
+        <div class="container-wide">
+            <p class="media-section-label">ADDITIONAL CAMPAIGN CLIPS</p>
+            <h2 class="section-heading-large" style="margin-bottom: 20px;">Campaign Reels</h2>
+            
+            <div class="phone-grid">
+                <!-- Video 2 -->
+                <div class="phone-grid-item">
+                    <div class="phone-video-container">
+                        <video class="phone-video" loop muted playsinline controls>
+                            <source src="s2.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="phone-grid-caption">Asset 02</p>
+                </div>
+
+                <!-- Video 3 -->
+                <div class="phone-grid-item">
+                    <div class="phone-video-container">
+                        <video class="phone-video" loop muted playsinline controls>
+                            <source src="s3.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="phone-grid-caption">Asset 03</p>
+                </div>
+
+                <!-- Video 4 -->
+                <div class="phone-grid-item">
+                    <div class="phone-video-container">
+                        <video class="phone-video" loop muted playsinline controls>
+                            <source src="s4.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="phone-grid-caption">Asset 04</p>
+                </div>
+
+                <!-- Video 5 -->
+                <div class="phone-grid-item">
+                    <div class="phone-video-container">
+                        <video class="phone-video" loop muted playsinline controls>
+                            <source src="s5.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="phone-grid-caption">Asset 05</p>
+                </div>
+
+                <!-- Video 6 -->
+                <div class="phone-grid-item">
+                    <div class="phone-video-container">
+                        <video class="phone-video" loop muted playsinline controls>
+                            <source src="s6.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <p class="phone-grid-caption">Asset 06</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== BACK LINK ===== -->
+    <section class="detail-back-section" style="padding-top: 0;">
+        <div class="container-wide">
+            <a href="../stage-bocavista.html" class="detail-back-btn">
+                &#8592; Back to Studio Bocavista
+            </a>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> <span id="footerLogo">Tess Jansen</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script>
+        // Simple script to update year
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
