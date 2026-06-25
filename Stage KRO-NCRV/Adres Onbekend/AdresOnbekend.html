@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adres Onbekend · Social edits | Tess Jansen</title>
+    <meta name="description"
+        content="Social media video edits for 'Adres Onbekend' on Radio 5. Highlight reels of emotional reunions, edited by Tess Jansen.">
+    <link rel="icon" type="image/x-icon" href="../../Normal Pages/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../Normal Pages/styles.css">
+    <style>
+        /* Custom styles for vertical phone videos */
+        .phone-video-container {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 24px;
+            border: 8px solid var(--text-primary);
+            box-shadow: 0 20px 50px rgba(30, 51, 45, 0.22);
+            background-color: #000;
+            overflow: hidden;
+            aspect-ratio: 576/1024;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .phone-video-container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 25px 60px rgba(30, 51, 45, 0.3);
+        }
+
+        .phone-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .phone-grid-section {
+            padding: 40px 0 100px;
+            background-color: var(--bg-color);
+        }
+
+        .phone-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .phone-grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .phone-grid-caption {
+            margin-top: 14px;
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: center;
+        }
+
+        /* Facebook embed styling */
+        .facebook-embed-wrapper {
+            width: 100%;
+            max-width: 280px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 576/1024;
+            background: #f0f2f5;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+        }
+
+        .facebook-embed-wrapper:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+        }
+
+        .facebook-embed-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .detail-about-photo-col.phone-col {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 100px;
+        }
+
+        @media (max-width: 1300px) {
+            .phone-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .phone-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .detail-about-photo-col.phone-col {
+                position: static;
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .phone-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body class="page-experience">
+
+    <!-- Header -->
+    <header class="header page-header">
+        <div class="container-wide"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="../../Normal Pages/index.html" class="logo" id="logoText">Tess Jansen</a>
+            <a href="../../Normal Pages/contact.html" class="btn-connect" id="headerCta">
+                <span class="btn-connect-text">CONNECT</span>
+                <span class="btn-connect-icon">&#8594;</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <ul>
+            <li><a href="../../Normal Pages/index.html">Home</a></li>
+            <li><a href="../../Normal Pages/projects.html">Highlighted Work</a></li>
+            <li><a href="../../Normal Pages/experience.html">Experience and <br>Education</a></li>
+            <li><a href="../../Normal Pages/meetme.html">Meet me</a></li>
+            <li><a href="../../Normal Pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-nav-overlay" id="sideNavOverlay"></div>
+
+    <!-- === PAGE HERO === -->
+    <section class="exp-page-hero" style="margin-top: -30px;">
+        <div class="container-wide">
+            <div class="detail-hero-breadcrumb" style="margin-bottom: 14px;">
+                <a href="../../Normal Pages/experience.html">Experience</a>
+                <span style="margin: 0 8px; opacity: 0.6;">&#8594;</span>
+                <a href="../../Bocavista/stage-bocavista.html">Studio Bocavista</a>
+                <span style="margin: 0 8px; opacity: 0.6;">&#8594;</span>
+                <span style="opacity: 0.6;">Adres Onbekend</span>
+            </div>
+            <p class="meetme-label">STUDIO BOCAVISTA · INTERNSHIP</p>
+            <h1 class="exp-page-title">Adres <em>Onbekend</em></h1>
+            <p class="exp-page-subtitle">Social video edits · 2021</p>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT THIS SECTION ===== -->
+    <section class="detail-about-section">
+        <div class="container-wide">
+            <div class="detail-about-layout">
+
+                <!-- Left: Description -->
+                <div class="detail-about-text">
+                    <p class="detail-section-label">ABOUT THIS WORK</p>
+                    <h2 class="detail-about-title">Social highlights for <em>Adres Onbekend</em></h2>
+                    <p class="detail-about-body">
+                        <strong>Adres Onbekend</strong> is a program on Radio 5, broadcast every Sunday between 12:00
+                        and 14:00. The show reunites people who have been searching for each other for a long time. My
+                        task was to edit social posts from the highlights of these emotional reunions.
+                    </p>
+                    <p class="detail-about-body">
+                        Below are the videos I edited for this project. Each clip captures the heart of the reunion —
+                        the anticipation, the recognition, and the joy of finding someone after years apart.
+                    </p>
+                    <p class="detail-about-body">
+                        Working on Adres Onbekend taught me how to condense powerful, emotional moments into short,
+                        shareable social content that still does justice to the stories being told.
+                    </p>
+                    <div class="detail-about-tags">
+                        <span>Video Editing</span>
+                        <span>Social Media</span>
+                        <span>Storytelling</span>
+                        <span>Radio 5</span>
+                        <span>Emotional Content</span>
+                    </div>
+                </div>
+
+                <!-- Right: Featured Facebook embed -->
+                <div class="detail-about-photo-col phone-col">
+                    <div class="facebook-embed-wrapper">
+                        <iframe
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1995391207885870%2F&show_text=0&width=280"
+                            width="280" height="498" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="detail-divider"></div>
+
+    <!-- === MEDIA GALLERY SECTION === -->
+    <section class="phone-grid-section">
+        <div class="container-wide">
+            <p class="media-section-label">ADDITIONAL HIGHLIGHTS</p>
+            <h2 class="section-heading-large" style="margin-bottom: 20px;">Reunion Reels</h2>
+
+            <div class="phone-grid">
+                <!-- Embed 2 -->
+                <div class="phone-grid-item">
+                    <div class="facebook-embed-wrapper">
+                        <iframe
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F692655406792787%2F&show_text=0&width=280"
+                            width="280" height="498" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="phone-grid-caption">Highlight 02</p>
+                </div>
+
+                <!-- Embed 3 -->
+                <div class="phone-grid-item">
+                    <div class="facebook-embed-wrapper">
+                        <iframe
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1168245185397060%2F&show_text=0&width=280"
+                            width="280" height="498" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="phone-grid-caption">Highlight 03</p>
+                </div>
+
+                <!-- Embed 4 -->
+                <div class="phone-grid-item">
+                    <div class="facebook-embed-wrapper">
+                        <iframe
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1392901022442558%2F&show_text=0&width=280"
+                            width="280" height="498" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="phone-grid-caption">Highlight 04</p>
+                </div>
+
+                <!-- Embed 5 -->
+                <div class="phone-grid-item">
+                    <div class="facebook-embed-wrapper">
+                        <iframe
+                            src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1428544312222006%2F&show_text=0&width=280"
+                            width="280" height="498" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+                            allowfullscreen="true"
+                            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                    </div>
+                    <p class="phone-grid-caption">Highlight 05</p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== BACK LINK ===== -->
+    <section class="detail-back-section" style="padding-top: 0;">
+        <div class="container-wide">
+            <a href="../../Stage KRO-NCRV/stage-kroncrv.html" class="detail-back-btn">
+                &#8592; Back to KRO-NCRV
+            </a>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> <span id="footerLogo">Tess Jansen</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../Normal Pages/script.js"></script>
+    <script>
+        // Simple script to update year
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

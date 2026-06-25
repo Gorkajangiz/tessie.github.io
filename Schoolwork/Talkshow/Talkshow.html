@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talkshow · XOLVE | Tess Jansen</title>
+    <meta name="description"
+        content="Talkshow production for ICT company Fikss and their software XOLVE. Camera planning, location visit, preparation and camera operation by Tess Jansen.">
+    <link rel="icon" type="image/x-icon" href="../../Normal Pages/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../Normal Pages/styles.css">
+    <style>
+        .video-embed-wrapper {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(30, 51, 45, 0.15);
+            transition: var(--transition);
+            aspect-ratio: 16/9;
+            background: #000;
+        }
+
+        .video-embed-wrapper:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(30, 51, 45, 0.2);
+        }
+
+        .video-embed-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        .media-featured-caption {
+            margin-top: 16px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+
+<body class="page-experience">
+
+    <!-- Header -->
+    <header class="header page-header">
+        <div class="container-wide"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="../../Normal Pages/index.html" class="logo" id="logoText">Tess Jansen</a>
+            <a href="../../Normal Pages/contact.html" class="btn-connect" id="headerCta">
+                <span class="btn-connect-text">CONNECT</span>
+                <span class="btn-connect-icon">&#8594;</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <ul>
+            <li><a href="../../Normal Pages/index.html">Home</a></li>
+            <li><a href="../../Normal Pages/projects.html">Highlighted Work</a></li>
+            <li><a href="../../Normal Pages/experience.html">Experience and <br>Education</a></li>
+            <li><a href="../../Normal Pages/meetme.html">Meet me</a></li>
+            <li><a href="../../Normal Pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-nav-overlay" id="sideNavOverlay"></div>
+
+    <!-- === PAGE HERO === -->
+    <section class="exp-page-hero" style="margin-top: -30px;">
+        <div class="container-wide">
+            <p class="meetme-label">School Project</p>
+            <h1 class="exp-page-title">Talkshow <em>XOLVE</em></h1>
+            <p class="exp-page-subtitle">Production · 2026</p>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT THIS SECTION ===== -->
+    <section class="detail-about-section">
+        <div class="container-wide">
+            <div class="detail-about-layout">
+
+                <!-- Left: Description -->
+                <div class="detail-about-text">
+                    <p class="detail-section-label">ABOUT THIS PROJECT</p>
+                    <h2 class="detail-about-title">Talkshow production <em>for Fikss</em></h2>
+                    <p class="detail-about-body">
+                        For one of the later assignments during the school year, we had to prepare a talkshow for a
+                        client. In my case, this was for the ICT company Fikss and their software XOLVE.
+                    </p>
+                    <p class="detail-about-body">
+                        <strong>My tasks for this project:</strong>
+                        <br>– Camera plan
+                        <br>– Location visit
+                        <br>– Preparatory work
+                        <br>– Operating the camera focused on the talkshow host
+                    </p>
+                    <p class="detail-about-body">
+                        This project challenged me to think beyond just operating the camera — I had to plan the entire
+                        shoot, visit the location to assess lighting and angles, prepare all necessary equipment, and
+                        then execute the camera work during the actual recording. The focus on the talkshow host
+                        required precise framing and smooth operation to keep the conversation engaging and visually
+                        dynamic.
+                    </p>
+                    <div class="detail-about-tags">
+                        <span>Camera Planning</span>
+                        <span>Location Scouting</span>
+                        <span>Preparation</span>
+                        <span>Camera Operation</span>
+                        <span>Talkshow</span>
+                        <span>Fikss</span>
+                    </div>
+                </div>
+
+                <!-- Right: Photo -->
+                <div class="detail-about-photo-col">
+                    <div class="detail-about-photo-wrapper">
+                        <img src="https://images.unsplash.com/photo-1500210755897-b0ba3bf8de39?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            alt="Camera setup for the talkshow production" class="detail-about-photo" loading="lazy">
+                        <div class="detail-about-photo-caption">Camera setup during the talkshow recording</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="detail-divider"></div>
+
+    <!-- === MEDIA GALLERY SECTION === -->
+    <section class="media-gallery-section">
+        <div class="container-wide">
+            <p class="media-section-label">PROJECT MEDIA</p>
+            <h2 class="section-heading-large" style="margin-bottom: 50px;">Talkshow Recording</h2>
+
+            <!-- ── Featured Video (Embed) ── -->
+            <div class="media-featured">
+                <div class="video-embed-wrapper">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/dHU6xerSzAU?si=p5waW6aBTqmbp1ER"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <p class="media-featured-caption">Talkshow recording for Fikss — featuring the XOLVE software</p>
+            </div>
+
+        </div>
+    </section>
+<!-- ===== BACK LINK ===== -->
+    <section class="detail-back-section" style="padding-top: 0;">
+        <div class="container-wide">
+            <a href="../school-work.html" class="detail-back-btn">
+                &#8592; Back to School Work
+            </a>
+        </div>
+    </section>
+    <!-- === FOOTER === -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> <span id="footerLogo">Tess Jansen</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../Normal Pages/script.js"></script>
+    <script src="../../Normal Pages/experience.js"></script>
+    <script>
+        // Simple script to update year
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+    </script>
+</body>
+
+</html>

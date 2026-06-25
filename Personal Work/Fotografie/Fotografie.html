@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotografie · Before &amp; After | Tess Jansen</title>
+    <meta name="description"
+        content="Photography editing showcase by Tess Jansen — before and after comparisons with interactive drag sliders.">
+    <link rel="icon" type="image/x-icon" href="../../Normal Pages/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../Normal Pages/styles.css">
+    <style>
+        /* ── Comparison Grid ── */
+        .comparison-section {
+            padding: 60px 0 120px;
+            background-color: var(--bg-color);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 48px;
+            margin-top: 50px;
+        }
+
+        /* Single comparison card */
+        .comparison-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 28px rgba(30, 51, 45, 0.10);
+            transition: var(--transition);
+        }
+
+        .comparison-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 44px rgba(30, 51, 45, 0.16);
+        }
+
+        .comparison-card-caption {
+            padding: 14px 20px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-style: italic;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .comparison-card-caption .before-label {
+            color: var(--text-secondary);
+            font-weight: 600;
+            font-style: normal;
+            letter-spacing: 0.5px;
+        }
+
+        .comparison-card-caption .after-label {
+            color: var(--btn-color);
+            font-weight: 600;
+            font-style: normal;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Comparison Slider ── */
+        .img-compare-wrapper {
+            position: relative;
+            width: 100%;
+            /* Fixed height so both images always align even if sizes differ */
+            height: var(--wrapper-height, 340px);
+            overflow: hidden;
+            cursor: col-resize;
+            user-select: none;
+            -webkit-user-select: none;
+            background: #000;
+        }
+
+        /* The "before" image fills the full container */
+        .img-compare-before,
+        .img-compare-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+            pointer-events: none;
+        }
+
+        /* "after" image is clipped on the right side, controlled by JS */
+        .img-compare-after-clip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            /* default starting position */
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .img-compare-after-clip img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            /* The inner image must match the *wrapper* width */
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        /* The draggable divider line */
+        .img-compare-divider {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        /* The drag handle circle */
+        .img-compare-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            background: #fff;
+            border-radius: 50%;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 11;
+            pointer-events: none;
+            transition: transform 0.15s ease, box-shadow 0.15s ease;
+        }
+
+        .img-compare-handle::before,
+        .img-compare-handle::after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-top: 7px solid transparent;
+            border-bottom: 7px solid transparent;
+            position: absolute;
+        }
+
+        .img-compare-handle::before {
+            border-right: 10px solid var(--text-primary);
+            left: 6px;
+        }
+
+        .img-compare-handle::after {
+            border-left: 10px solid var(--text-primary);
+            right: 6px;
+        }
+
+        .img-compare-wrapper.dragging .img-compare-handle {
+            transform: translate(-50%, -50%) scale(1.12);
+            box-shadow: 0 4px 22px rgba(0, 0, 0, 0.35);
+        }
+
+        /* Floating label overlays */
+        .img-compare-label {
+            position: absolute;
+            top: 14px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 5;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .img-compare-label-before {
+            left: 14px;
+            background: rgba(30, 51, 45, 0.75);
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .img-compare-label-after {
+            right: 14px;
+            background: rgba(103, 47, 60, 0.82);
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        /* Hint arrow on first load */
+        .img-compare-hint {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+            background: rgba(0, 0, 0, 0.35);
+            padding: 5px 12px;
+            border-radius: 20px;
+            z-index: 5;
+            pointer-events: none;
+            opacity: 1;
+            transition: opacity 0.4s ease;
+        }
+
+        .img-compare-hint.hidden {
+            opacity: 0;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 1000px) {
+            .comparison-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .img-compare-wrapper {
+                height: var(--wrapper-height-mobile, 260px);
+            }
+        }
+    </style>
+</head>
+
+<body class="page-experience">
+
+    <!-- Header -->
+    <header class="header page-header">
+        <div class="container-wide"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="../../Normal Pages/index.html" class="logo" id="logoText">Tess Jansen</a>
+            <a href="../../Normal Pages/contact.html" class="btn-connect" id="headerCta">
+                <span class="btn-connect-text">CONNECT</span>
+                <span class="btn-connect-icon">&#8594;</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <ul>
+            <li><a href="../../Normal Pages/index.html">Home</a></li>
+            <li><a href="../../Normal Pages/projects.html">Highlighted Work</a></li>
+            <li><a href="../../Normal Pages/experience.html">Experience and <br>Education</a></li>
+            <li><a href="../../Normal Pages/meetme.html">Meet me</a></li>
+            <li><a href="../../Normal Pages/contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-nav-overlay" id="sideNavOverlay"></div>
+
+    <!-- === PAGE HERO === -->
+    <section class="exp-page-hero" style="margin-top: -30px;">
+        <div class="container-wide">
+            <p class="meetme-label">PERSONAL WORK</p>
+            <h1 class="exp-page-title">Fotografie <em>Editing</em></h1>
+            <p class="exp-page-subtitle">Before &amp; After · Photo Retouching</p>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT THIS SECTION ===== -->
+    <section class="detail-about-section">
+        <div class="container-wide">
+            <div class="detail-about-layout">
+
+                <!-- Left: Description -->
+                <div class="detail-about-text">
+                    <p class="detail-section-label">ABOUT THIS WORK</p>
+                    <h2 class="detail-about-title">From raw capture <em>to finished image</em></h2>
+                    <p class="detail-about-body">
+                        Photography editing is as much a craft as the shoot itself. Each image below started as a raw
+                        capture and was transformed through careful retouching — adjusting light, shadow, colour,
+                        skin tones, and composition until the photo matched the original vision.
+                    </p>
+                    <p class="detail-about-body">
+                        Drag the vertical slider on each image to reveal the before on the left and the
+                        finished edit on the right. Notice how colour grading, exposure correction, and
+                        targeted retouching bring each photo to life.
+                    </p>
+                    <div class="detail-about-tags">
+                        <span>Photo Editing</span>
+                        <span>Colour Grading</span>
+                        <span>Retouching</span>
+                        <span>Lightroom</span>
+                        <span>Photoshop</span>
+                    </div>
+                </div>
+
+                <!-- Right: first comparison as a quick preview -->
+                <div class="detail-about-photo-col">
+                    <div class="detail-about-photo-wrapper">
+                        <img src="img1.png" alt="Photography editing preview" class="detail-about-photo" loading="lazy"
+                            style="object-fit: cover;">
+                        <div class="detail-about-photo-caption">Slide the comparisons below to explore the edits</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== DIVIDER ===== -->
+    <div class="detail-divider"></div>
+
+    <!-- === COMPARISON GALLERY === -->
+    <section class="comparison-section">
+        <div class="container-wide">
+            <p class="media-section-label">BEFORE &amp; AFTER</p>
+            <h2 class="section-heading-large" style="margin-bottom: 10px;">Drag to <em>Compare</em></h2>
+            <p style="text-align:center; color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 0;">
+                Slide left/right on each image to reveal the edit
+            </p>
+
+            <div class="comparison-grid">
+
+                <!-- ── Pair 1 ── -->
+                <div class="comparison-card">
+                    <div class="img-compare-wrapper" data-index="1">
+                        <!-- BEFORE (background, always visible) -->
+                        <img class="img-compare-before" src="img2.png" alt="Photo 1 — before editing" loading="lazy">
+                        <!-- AFTER (clipped on left side) -->
+                        <div class="img-compare-after-clip">
+                            <img src="img1.png" alt="Photo 1 — after editing" loading="lazy">
+                        </div>
+                        <!-- Labels -->
+                        <span class="img-compare-label img-compare-label-before">Before</span>
+                        <span class="img-compare-label img-compare-label-after">After</span>
+                        <!-- Divider & handle -->
+                        <div class="img-compare-divider"></div>
+                        <div class="img-compare-handle"></div>
+                        <div class="img-compare-hint">&#8592; Drag &#8594;</div>
+                    </div>
+                    <div class="comparison-card-caption">
+                        <span class="before-label">&#9675; Before</span>
+                        <span style="color: var(--text-secondary); font-style: italic;">Photo 01</span>
+                        <span class="after-label">After &#9679;</span>
+                    </div>
+                </div>
+
+                <!-- ── Pair 2 ── -->
+                <div class="comparison-card">
+                    <div class="img-compare-wrapper" data-index="2">
+                        <img class="img-compare-before" src="img3.png" alt="Photo 2 — before editing" loading="lazy">
+                        <div class="img-compare-after-clip">
+                            <img src="img3.png" alt="Photo 2 — after editing" loading="lazy">
+                        </div>
+                        <span class="img-compare-label img-compare-label-before">Before</span>
+                        <span class="img-compare-label img-compare-label-after">After</span>
+                        <div class="img-compare-divider"></div>
+                        <div class="img-compare-handle"></div>
+                        <div class="img-compare-hint">&#8592; Drag &#8594;</div>
+                    </div>
+                    <div class="comparison-card-caption">
+                        <span class="before-label">&#9675; Before</span>
+                        <span style="color: var(--text-secondary); font-style: italic;">Photo 02</span>
+                        <span class="after-label">After &#9679;</span>
+                    </div>
+                </div>
+
+                <!-- ── Pair 3 ── -->
+                <div class="comparison-card">
+                    <div class="img-compare-wrapper" data-index="3"
+                        style="--wrapper-height: 680px; --wrapper-height-mobile: 75vh;">
+                        <img class="img-compare-before" src="img6.png" alt="Photo 3 — before editing" loading="lazy">
+                        <div class="img-compare-after-clip">
+                            <img src="img5.png" alt="Photo 3 — after editing" loading="lazy">
+                        </div>
+                        <span class="img-compare-label img-compare-label-before">Before</span>
+                        <span class="img-compare-label img-compare-label-after">After</span>
+                        <div class="img-compare-divider"></div>
+                        <div class="img-compare-handle"></div>
+                        <div class="img-compare-hint">&#8592; Drag &#8594;</div>
+                    </div>
+                    <div class="comparison-card-caption">
+                        <span class="before-label">&#9675; Before</span>
+                        <span style="color: var(--text-secondary); font-style: italic;">Photo 03</span>
+                        <span class="after-label">After &#9679;</span>
+                    </div>
+                </div>
+
+                <!-- ── Pair 4 ── -->
+                <div class="comparison-card">
+                    <div class="img-compare-wrapper" data-index="4"
+                        style="--wrapper-height: 680px; --wrapper-height-mobile: 75vh;">
+                        <img class="img-compare-before" src="img8.png" alt="Photo 4 — before editing" loading="lazy">
+                        <div class="img-compare-after-clip">
+                            <img src="img7.png" alt="Photo 4 — after editing" loading="lazy">
+                        </div>
+                        <span class="img-compare-label img-compare-label-before">Before</span>
+                        <span class="img-compare-label img-compare-label-after">After</span>
+                        <div class="img-compare-divider"></div>
+                        <div class="img-compare-handle"></div>
+                        <div class="img-compare-hint">&#8592; Drag &#8594;</div>
+                    </div>
+                    <div class="comparison-card-caption">
+                        <span class="before-label">&#9675; Before</span>
+                        <span style="color: var(--text-secondary); font-style: italic;">Photo 04</span>
+                        <span class="after-label">After &#9679;</span>
+                    </div>
+                </div>
+
+                <!-- ── Pair 5 — full width ── -->
+                <div class="comparison-card" style="grid-column: 1 / -1;">
+                    <div class="img-compare-wrapper" data-index="5"
+                        style="--wrapper-height: 780px; --wrapper-height-mobile: 75vh;">
+                        <img class="img-compare-before" src="img10.png" alt="Photo 5 — before editing" loading="lazy">
+                        <div class="img-compare-after-clip">
+                            <img src="img9.png" alt="Photo 5 — after editing" loading="lazy">
+                        </div>
+                        <span class="img-compare-label img-compare-label-before">Before</span>
+                        <span class="img-compare-label img-compare-label-after">After</span>
+                        <div class="img-compare-divider"></div>
+                        <div class="img-compare-handle"></div>
+                        <div class="img-compare-hint">&#8592; Drag &#8594;</div>
+                    </div>
+                    <div class="comparison-card-caption">
+                        <span class="before-label">&#9675; Before</span>
+                        <span style="color: var(--text-secondary); font-style: italic;">Photo 05 &mdash; featured
+                            edit</span>
+                        <span class="after-label">After &#9679;</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BACK LINK ===== -->
+    <section class="detail-back-section" style="padding-top: 0;">
+        <div class="container-wide">
+            <a href="../personal-work.html" class="detail-back-btn">
+                &#8592; Back to Personal Work
+            </a>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> <span id="footerLogo">Tess Jansen</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../../Normal Pages/script.js"></script>
+    <script>
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+
+        // ── Before/After Comparison Slider ──
+        document.querySelectorAll('.img-compare-wrapper').forEach(function (wrapper) {
+            const clip = wrapper.querySelector('.img-compare-after-clip');
+            const divider = wrapper.querySelector('.img-compare-divider');
+            const handle = wrapper.querySelector('.img-compare-handle');
+            const hint = wrapper.querySelector('.img-compare-hint');
+
+            let isDragging = false;
+            let hintDismissed = false;
+
+            function setPosition(x) {
+                const rect = wrapper.getBoundingClientRect();
+                // Clamp between 2% and 98% so edge images are always visible
+                let pct = Math.max(2, Math.min(98, ((x - rect.left) / rect.width) * 100));
+
+                clip.style.width = pct + '%';
+                divider.style.left = pct + '%';
+                handle.style.left = pct + '%';
+
+                // Keep the inner image at full wrapper width so it doesn't squish
+                clip.querySelector('img').style.width = (rect.width) + 'px';
+
+                if (!hintDismissed) {
+                    hint.classList.add('hidden');
+                    hintDismissed = true;
+                }
+            }
+
+            // Set inner image width on init so it matches the wrapper
+            function initWidth() {
+                const rect = wrapper.getBoundingClientRect();
+                clip.querySelector('img').style.width = rect.width + 'px';
+            }
+            initWidth();
+            window.addEventListener('resize', initWidth);
+
+            // Mouse events
+            wrapper.addEventListener('mousedown', function (e) {
+                isDragging = true;
+                wrapper.classList.add('dragging');
+                setPosition(e.clientX);
+                e.preventDefault();
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!isDragging) return;
+                setPosition(e.clientX);
+            });
+
+            document.addEventListener('mouseup', function () {
+                if (isDragging) {
+                    isDragging = false;
+                    wrapper.classList.remove('dragging');
+                }
+            });
+
+            // Touch events
+            wrapper.addEventListener('touchstart', function (e) {
+                isDragging = true;
+                wrapper.classList.add('dragging');
+                setPosition(e.touches[0].clientX);
+                e.preventDefault();
+            }, { passive: false });
+
+            document.addEventListener('touchmove', function (e) {
+                if (!isDragging) return;
+                setPosition(e.touches[0].clientX);
+            }, { passive: true });
+
+            document.addEventListener('touchend', function () {
+                isDragging = false;
+                wrapper.classList.remove('dragging');
+            });
+        });
+    </script>
+</body>
+
+</html>

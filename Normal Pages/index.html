@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tessa Jansen | Creative Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <section class="hero-wrapper" id="home">
+        <div class="background-split"></div>
+        <div class="background-image-split">
+            <img id="heroImage" src="tess.jpg" alt="Tessa Jansen">
+        </div>
+        <nav class="side-nav" id="sideNav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Highlighted Work</a></li>
+                <li><a href="experience.html">Experience and <br>Education</a></li>
+                <li><a href="meetme.html">Meet Me</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="side-nav-overlay" id="sideNavOverlay"></div>
+        <div class="hero-container">
+            <header class="header">
+                <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="#" class="logo" id="logoText">Tessa Jansen</a>
+                <a href="contact.html" class="btn-connect" id="headerCta">
+                    <span class="btn-connect-text">CONNECT</span>
+                    <span class="btn-connect-icon">&#8594;</span>
+                </a>
+            </header>
+            <div class="hero">
+                <div class="hero-left" style="margin-left: -50px;">
+                    <p class="hero-label" id="heroLabel">MY WORK</p>
+                    <h1 class="hero-main-title" id="heroMainTitle">Hi, I'm Tessa — a video editor and creative
+                        storyteller who thrives on colour, rhythm, and detail. I turn footage into feeling, and I’m
+                        always ready for the next frame. <em>Let’s make something memorable.</em></h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="diagonal-bar"></div>
+    <section class="video-banner" id="banner">
+        <video class="video-banner-bg" autoplay loop muted playsinline id="bannerVideo" src="placeholder.mp4"></video>
+        <div class="video-banner-overlay"></div>
+        <div class="video-banner-content">
+            <h2 id="bannerTitle">EDITING &amp; COLOUR</h2>
+            <p id="bannerSubtitle">A selection of projects that show my range — from socials to broadcast.</p>
+            <a href="projects.html" class="btn-projects">Explore my work &#8594;</a>
+        </div>
+    </section>
+    <div class="diagonal-bar"></div>
+    <br><br>
+    <section class="videos-section" id="projects">
+        <div class="container-wide">
+            <h2 class="section-heading-large" id="videosHeading">Featured Projects</h2>
+            <div class="videos-grid" id="videosGrid">
+                <!-- Bocavista: Socials Trimetal -->
+                <a href="../Bocavista/Socials Trimetal/SocialsTrimetal.html" class="video-card">
+                    <div class="video-thumbnail-wrapper">
+                        <img src="prev1.png" alt="Socials Trimetal thumbnail" class="video-thumbnail" loading="lazy">
+                        <div class="play-button"></div>
+                    </div>
+                    <h3 class="video-title">Socials Trimetal | Studio Bocavista</h3>
+                    <p class="video-role">Tessa Jansen - Editor &amp; Colourist</p>
+                </a>
+
+                <!-- KRO-NCRV: Adres Onbekend -->
+                <a href="../Stage KRO-NCRV/Adres Onbekend/AdresOnbekend.html" class="video-card">
+                    <div class="video-thumbnail-wrapper">
+                        <img src="prev2.png" alt="Adres Onbekend thumbnail" class="video-thumbnail" loading="lazy">
+                        <div class="play-button"></div>
+                    </div>
+                    <h3 class="video-title">Adres Onbekend | KRO-NCRV</h3>
+                    <p class="video-role">Tessa Jansen - Editor &amp; Post-production</p>
+                </a>
+
+                <!-- Personal Work: Fotografie -->
+                <a href="../Personal Work/Fotografie/Fotografie.html" class="video-card">
+                    <div class="video-thumbnail-wrapper">
+                        <img src="prev3.png" alt="Fotografie personal work thumbnail" class="video-thumbnail"
+                            loading="lazy">
+                        <div class="play-button"></div>
+                    </div>
+                    <h3 class="video-title">Fotografie | Personal Work</h3>
+                    <p class="video-role">Tessa Jansen - Editor &amp; Colourist</p>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="diagonal-bar-top"></div>
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <h2 class="section-heading-light" id="experienceHeading">Work Experience</h2>
+            <div class="experience-list" id="experienceList">
+                <!-- Stage Studio Bocavista -->
+                <a href="../Bocavista/stage-bocavista.html" class="experience-item">
+                    <div class="exp-left">
+                        <h3 class="exp-role">Post-production Intern</h3>
+                        <p class="exp-company">Studio Bocavista</p>
+                    </div>
+                    <div class="exp-right">
+                        <p class="exp-year">Feb 2026 - Jun 2026</p>
+                        <p class="exp-desc">DaVinci Resolve &amp; After Effects in a professional environment. Focused
+                            on colour grading and motion graphics for commercial projects.</p>
+                    </div>
+                </a>
+
+                <!-- Stage KRO-NCRV -->
+                <a href="../Stage KRO-NCRV/stage-kroncrv.html" class="experience-item">
+                    <div class="exp-left">
+                        <h3 class="exp-role">Editing Intern</h3>
+                        <p class="exp-company">KRO-NCRV</p>
+                    </div>
+                    <div class="exp-right">
+                        <p class="exp-year">Sep 2025 - Jan 2026</p>
+                        <p class="exp-desc">Worked with Adobe Premiere Pro, Photoshop, and After Effects on broadcast
+                            content, gaining hands-on experience in fast-paced production.</p>
+                    </div>
+                </a>
+
+                <!-- Eigen werk (Personal Work) -->
+                <a href="../Personal Work/personal-work.html" class="experience-item">
+                    <div class="exp-left">
+                        <h3 class="exp-role">Independent Editor &amp; Creator</h3>
+                        <p class="exp-company">Personal Projects</p>
+                    </div>
+                    <div class="exp-right">
+                        <p class="exp-year">2020 - Present</p>
+                        <p class="exp-desc">Self-taught in DaVinci Resolve Fusion for YouTube and personal creative
+                            projects. Always experimenting with new techniques.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="studies-section" id="studies">
+        <div class="container">
+            <h2 class="section-heading" id="studiesHeading">STUDIES</h2>
+            <div class="studies-list" id="studiesList">
+                <!-- Digitale Techniek en Media (DTM) -->
+                <a href="../Schoolwork/school-work.html" class="study-item">
+                    <div class="study-left">
+                        <h3 class="study-degree">Associate Degree – Digital Technology &amp; Media</h3>
+                        <p class="study-school">Hogeschool Utrecht, Amersfoort</p>
+                    </div>
+                    <div class="study-right">
+                        <p class="study-year">2024 – 2026</p>
+                        <p class="study-desc">Focused on digital media production, video editing, and creative
+                            technology. Combined theory with hands-on projects in a professional media environment.
+                        </p>
+                    </div>
+                </a>
+
+                <!-- Software Development (HAN) -->
+                <a href="https://www.han.nl/" target="_blank" rel="noopener noreferrer" class="study-item">
+                    <div class="study-left">
+                        <h3 class="study-degree">Software Development</h3>
+                        <p class="study-school">Hogeschool Arnhem Nijmegen, Arnhem</p>
+                    </div>
+                    <div class="study-right">
+                        <p class="study-year">2019 – 2023</p>
+                        <p class="study-desc">Studied software engineering, programming, and system design.
+                            Developed a strong technical foundation for creative media work.</p>
+                    </div>
+                </a>
+
+                <!-- HAVO -->
+                <a href="https://www.marnixcollege.nl/" target="_blank" rel="noopener noreferrer" class="study-item">
+                    <div class="study-left">
+                        <h3 class="study-degree">HAVO (Higher General Secondary Education)</h3>
+                        <p class="study-school">Marnix College, Ede</p>
+                    </div>
+                    <div class="study-right">
+                        <p class="study-year">2013 – 2018</p>
+                        <p class="study-desc">Completed secondary education with a focus on science and technology,
+                            laying the groundwork for further studies in software development and digital media.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> <span id="footerLogo">Tessa Jansen</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience | Tessa Jansen</title>
+    <meta name="description"
+        content="Tessa Jansen's professional timeline — a career mapped across film studios, agencies, and creative institutions.">
+    <link rel="icon" type="image/x-icon" href="icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page-experience">
+
+    <!-- Header -->
+    <header class="header page-header">
+        <div class="container-wide"
+            style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <button class="menu-btn" id="menuBtn" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="index.html" class="logo" id="logoText">Tessa Jansen</a>
+            <a href="contact.html" class="btn-connect" id="headerCta">
+                <span class="btn-connect-text">CONNECT</span>
+                <span class="btn-connect-icon">&#8594;</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Side Navigation -->
+    <nav class="side-nav" id="sideNav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="projects.html">Highlighted Work</a></li>
+            <li><a href="experience.html">Experience and <br>Education</a></li>
+            <li><a href="meetme.html">Meet me</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="side-nav-overlay" id="sideNavOverlay"></div>
+
+    <!-- === PAGE HERO === -->
+    <section class="exp-page-hero" style="margin-top: -30px;">
+        <div class="container-wide">
+            <p class="meetme-label">CAREER</p>
+            <h1 class="exp-page-title">Experience &amp; <em>Education</em></h1>
+            <p class="exp-page-subtitle">Building a career frame by frame — from internships to independent projects.
+            </p>
+        </div>
+    </section>
+
+    <!-- === TIMELINE SECTION === -->
+    <section class="timeline-section">
+        <div class="container-wide">
+
+            <!-- Timeline Header -->
+            <div class="timeline-header">
+                <!-- Legend -->
+                <div class="timeline-legend" aria-label="Timeline legend">
+                    <div class="timeline-legend-item">
+                        <span class="legend-dot work"></span>
+                        <span>Work Experience</span>
+                    </div>
+                    <div class="timeline-legend-item">
+                        <span class="legend-dot education"></span>
+                        <span>Education</span>
+                    </div>
+                </div>
+                <!-- Toggle Button -->
+                <button id="toggleTimelineBtn" class="timeline-toggle-btn" aria-expanded="true" aria-controls="timelineCollapsible">
+                    <span>Hide Timeline</span>
+                    <svg class="chevron-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Collapsible Wrapper -->
+            <div id="timelineCollapsible" class="timeline-collapsible-wrapper">
+                <!-- Timeline Ruler -->
+                <div class="timeline-ruler" id="timelineRuler" aria-label="Career timeline">
+                <!-- Year markers rendered by JS -->
+                <div class="timeline-ruler-years" id="timelineYears"></div>
+
+                <!-- Track: Work -->
+                <div class="timeline-track" aria-label="Work track">
+                    <div class="timeline-track-label">
+                        WORK
+                    </div>
+                    <div class="timeline-track-lane" id="workLane">
+                        <!-- Work blocks: Studio Bocavista -->
+                        <div class="tl-block work" style="--tl-start: 13; --tl-span: 1;" data-id="bocavista"
+                            role="button" tabindex="0" aria-label="Studio Bocavista – Post-production Intern 2026">
+                            <span class="tl-block-label">Studio Bocavista</span>
+                            <span class="tl-block-year">2026</span>
+                        </div>
+                        <!-- Work block: KRO-NCRV -->
+                        <div class="tl-block work" style="--tl-start: 12; --tl-span: 1;" data-id="kro" role="button"
+                            tabindex="0" aria-label="KRO-NCRV – Editing Intern 2025–2026">
+                            <span class="tl-block-label">KRO-NCRV</span>
+                            <span class="tl-block-year">2025 – 2026</span>
+                        </div>
+                        <!-- Work block: Personal Work -->
+                        <div class="tl-block work" style="--tl-start: 7; --tl-span: 7;" data-id="personal" role="button"
+                            tabindex="0" aria-label="Personal Projects – Independent Editor 2020–Present">
+                            <span class="tl-block-label">Personal Work</span>
+                            <span class="tl-block-year">2020 – Now</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track: Education -->
+                <div class="timeline-track" aria-label="Education track">
+                    <div class="timeline-track-label">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                            <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                        </svg>
+                        EDUCATION
+                    </div>
+                    <div class="timeline-track-lane" id="educationLane">
+                        <!-- Education blocks -->
+                        <div class="tl-block education" style="--tl-start: 11; --tl-span: 2;" data-id="dtm"
+                            role="button" tabindex="0"
+                            aria-label="Associate Degree Digital Technology & Media 2024–2026">
+                            <span class="tl-block-label">Digital Tech & Media</span>
+                            <span class="tl-block-year">2024 – 2026</span>
+                        </div>
+                        <div class="tl-block education" style="--tl-start: 6; --tl-span: 4;" data-id="software-dev"
+                            role="button" tabindex="0" aria-label="Software Development 2019–2023">
+                            <span class="tl-block-label">Software Dev.</span>
+                            <span class="tl-block-year">2019 – 2023</span>
+                        </div>
+                        <div class="tl-block education" style="--tl-start: 0; --tl-span: 5;" data-id="havo"
+                            role="button" tabindex="0" aria-label="HAVO 2013–2018">
+                            <span class="tl-block-label">HAVO</span>
+                            <span class="tl-block-year">2013 – 2018</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Playhead -->
+                <div class="timeline-playhead" id="timelinePlayhead">
+                    <div class="playhead-line"></div>
+                    <div class="playhead-head"></div>
+                </div>
+            </div>
+
+            <p class="timeline-scroll-hint">← Drag or scroll to explore timeline →</p>
+            </div> <!-- End of timelineCollapsible -->
+        </div>
+    </section>
+
+    <!-- === CARDS SECTION === -->
+    <section class="exp-cards-section">
+        <div class="container-wide">
+            <h2 class="section-heading-large" style="margin-bottom: 20px;">Roles &amp; <em>Positions</em></h2><br>
+            <p class="exp-cards-intro">Click any card to explore each role in depth.</p>
+
+            <!-- Work Experience Cards -->
+            <div class="exp-category-title">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <rect x="2" y="7" width="20" height="14" rx="2" />
+                    <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+                </svg>
+                Work Experience
+            </div>
+            <div class="exp-cards-grid">
+
+                <!-- Studio Bocavista -->
+                <a href="../Bocavista/stage-bocavista.html" class="exp-card" id="card-bocavista" data-id="bocavista">
+                    <div class="exp-card-accent work"></div>
+                    <div class="exp-card-inner">
+                        <div class="exp-card-header">
+                            <div>
+                                <p class="exp-card-years">Feb 2026 – Jun 2026</p>
+                                <h3 class="exp-card-role">Post-production Intern</h3>
+                                <p class="exp-card-company">Studio Bocavista</p>
+                            </div>
+                            <div class="exp-card-badge work">WORK</div>
+                        </div>
+                        <p class="exp-card-desc">Applied DaVinci Resolve and After Effects in a professional
+                            environment. Gained practical experience in colour grading, motion graphics, and workflow
+                            efficiency for commercial projects.</p>
+                        <ul class="exp-card-tags">
+                            <li>DaVinci Resolve</li>
+                            <li>After Effects</li>
+                            <li>Colour Grading</li>
+                            <li>Motion Graphics</li>
+                        </ul>
+                        <div class="exp-card-cta">
+                            Explore role <span class="arrow">&#8594;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- KRO-NCRV -->
+                <a href="../Stage KRO-NCRV/stage-kroncrv.html" class="exp-card" id="card-kro" data-id="kro">
+                    <div class="exp-card-accent work"></div>
+                    <div class="exp-card-inner">
+                        <div class="exp-card-header">
+                            <div>
+                                <p class="exp-card-years">Sep 2025 – Jan 2026</p>
+                                <h3 class="exp-card-role">Editing Intern</h3>
+                                <p class="exp-card-company">KRO-NCRV</p>
+                            </div>
+                            <div class="exp-card-badge work">WORK</div>
+                        </div>
+                        <p class="exp-card-desc">Worked on broadcast content using Adobe Premiere Pro, Photoshop, and
+                            After Effects. Gained insight into the fast-paced production environment of a major Dutch
+                            broadcaster.</p>
+                        <ul class="exp-card-tags">
+                            <li>Premiere Pro</li>
+                            <li>Photoshop</li>
+                            <li>After Effects</li>
+                            <li>Broadcast</li>
+                        </ul>
+                        <div class="exp-card-cta">
+                            Explore role <span class="arrow">&#8594;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Personal Work -->
+                <a href="../Personal Work/personal-work.html" class="exp-card" id="card-personal" data-id="personal">
+                    <div class="exp-card-accent work"></div>
+                    <div class="exp-card-inner">
+                        <div class="exp-card-header">
+                            <div>
+                                <p class="exp-card-years">2020 – Present</p>
+                                <h3 class="exp-card-role">Independent Editor &amp; Creator</h3>
+                                <p class="exp-card-company">Personal Projects</p>
+                            </div>
+                            <div class="exp-card-badge work">WORK</div>
+                        </div>
+                        <p class="exp-card-desc">Self-taught in DaVinci Resolve Fusion for YouTube and personal creative
+                            projects. Constantly experimenting with new techniques and storytelling approaches.</p>
+                        <ul class="exp-card-tags">
+                            <li>DaVinci Resolve</li>
+                            <li>Fusion</li>
+                            <li>YouTube</li>
+                            <li>Creative Experimentation</li>
+                        </ul>
+                        <div class="exp-card-cta">
+                            Explore role <span class="arrow">&#8594;</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- Education Cards -->
+            <div class="exp-category-title" style="margin-top: 60px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                </svg>
+                Education
+            </div>
+            <div class="exp-cards-grid">
+
+                <!-- Digitale Techniek en Media (DTM) -->
+                <a href="../Schoolwork/school-work.html" class="exp-card" id="card-dtm" data-id="dtm">
+                    <div class="exp-card-accent education"></div>
+                    <div class="exp-card-inner">
+                        <div class="exp-card-header">
+                            <div>
+                                <p class="exp-card-years">Sep 2024 – Jul 2026</p>
+                                <h3 class="exp-card-role">Associate Degree – Digital Technology &amp; Media</h3>
+                                <p class="exp-card-company">Hogeschool Utrecht, Amersfoort</p>
+                            </div>
+                            <div class="exp-card-badge education">EDU</div>
+                        </div>
+                        <p class="exp-card-desc">Focused on digital media production, video editing, and creative
+                            technology. Combined theoretical knowledge with hands-on projects in a professional media
+                            environment.</p>
+                        <ul class="exp-card-tags">
+                            <li>Digital Media</li>
+                            <li>Video Production</li>
+                            <li>Creative Technology</li>
+                        </ul>
+                        <div class="exp-card-cta">
+                            Learn more <span class="arrow">&#8594;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- Software Development (HAN) -->
+                <a href="https://www.han.nl/" target="_blank" class="exp-card" id="card-software-dev"
+                    data-id="software-dev">
+                    <div class="exp-card-accent education"></div>
+                    <div class="exp-card-inner">
+                        <div class="exp-card-header">
+                            <div>
+                                <p class="exp-card-years">Sep 2019 – Sep 2023</p>
+                                <h3 class="exp-card-role">Software Development</h3>
+                                <p class="exp-card-company">Hogeschool Arnhem Nijmegen, Arnhem</p>
+                            </div>
+                            <div class="exp-card-badge education">EDU</div>
+                        </div>
+                        <p class="exp-card-desc">Studied software engineering principles, programming, and system
+                            design. Developed a strong technical foundation that complements creative media work.</p>
+                        <ul class="exp-card-tags">
+                            <li>Programming</li>
+                            <li>System Design</li>
+                            <li>Software Engineering</li>
+                        </ul>
+                        <div class="exp-card-cta">
+                            Visit school <span class="arrow">&#8594;</span>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- HAVO -->
+                <a href="https://www.marnixcollege.nl/" target="_blank" class="exp-card" id="card-havo" data-id="havo">
+                    <div class="exp-card-accent education"></div>
+                    <div class="exp-card-inner">
+                        <div class="exp-card-header">
+                            <div>
+                                <p class="exp-card-years">Sep 2013 – Jul 2018</p>
+                                <h3 class="exp-card-role">HAVO (Higher General Secondary Education)</h3>
+                                <p class="exp-card-company">Marnix College, Ede</p>
+                            </div>
+                            <div class="exp-card-badge education">EDU</div>
+                        </div>
+                        <p class="exp-card-desc">Completed secondary education with a focus on science and technology,
+                            laying the groundwork for further studies in software development and digital media.</p>
+                        <ul class="exp-card-tags">
+                            <li>Secondary Education</li>
+                            <li>Science &amp; Technology</li>
+                        </ul>
+                        <div class="exp-card-cta">
+                            Visit school <span class="arrow">&#8594;</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- === FOOTER === -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> <span id="footerLogo">Tessa Jansen</span>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="experience.js"></script>
+</body>
+
+</html>
