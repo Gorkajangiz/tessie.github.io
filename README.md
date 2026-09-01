@@ -28,38 +28,23 @@ La página actualmente esta online y siendo utilizada por mi clienta para buscar
 
 <h2>🖥️ Capturas de la aplicación</h2>
 
-<h3>Pantalla de carga</h3>
-<img src="resReadme/htmlearning.png" width="700"/>
-
 <h3>Landing page</h3>
-<img src="resReadme/htmlearning1.png" width="700"/>
+<img src="Resources/index1.png" width="700"/>
 
-<h3>Scroll</h3>
-<img src="resReadme/htmlearning2.png" width="700"/>
+<h3>Página principal</h3>
+<img src="Resources/index2.png" width="700"/>
 
-<h3>Scroll</h3>
-<img src="resReadme/htmlearning3.png" width="700"/>
+<h3>Página de experiencia y estudios</h3>
+<img src="Resources/exp1.png" width="700"/>
 
-<h3>Scroll</h3>
-<img src="resReadme/htmlearning4.png" width="700"/>
+<h3>Página de proyectos</h3>
+<img src="Resources/project1.png" width="700"/>
 
-<h3>Guías</h3>
-<img src="resReadme/htmlearning5.png" width="700"/>
-
-<h3>Precios</h3>
-<img src="resReadme/htmlearning6.png" width="700"/>
+<h3>Fotografía</h3>
+<img src="Resources/foto1.png" width="700"/>
 
 <h3>Contacto</h3>
-<img src="resReadme/htmlearning7.png" width="700"/>
-
-<h3>Inicio de sesión y registro</h3>
-<img src="resReadme/htmlearning8.png" width="700"/>
-
-<h3>Formularios varios</h3>
-<img src="resReadme/htmlearning9.png" width="700"/>
-
-<h3>Extras</h3>
-<img src="resReadme/htmlearning10.png" width="700"/>
+<img src="Resources/abme1.png" width="700"/>
 
 ---
 
